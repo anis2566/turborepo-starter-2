@@ -1,12 +1,14 @@
 {
-  "name": "shadcn-ui-monorepo",
+  "name": "shikhoary",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "postinstall": "pnpm db:generate",
+    "db:generate": "turbo db:generate"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
