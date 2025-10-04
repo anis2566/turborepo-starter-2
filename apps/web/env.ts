@@ -1,9 +1,7 @@
 import { createEnv } from "@t3-oss/env-nextjs";
-// import { vercel } from "@t3-oss/env-nextjs/presets-zod";
 import { z } from "zod";
 
 export const env = createEnv({
-  // extends: [vercel()],
   shared: {
     NODE_ENV: z
       .enum(["development", "production", "test"])
@@ -12,6 +10,7 @@ export const env = createEnv({
   server: {
     DATABASE_URL: z.string().url(),
     AUTH_SECRET: z.string().min(1),
+    VERCEL_URL: z.string().optional(), // Add this
   },
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string(),
@@ -20,6 +19,7 @@ export const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
     AUTH_SECRET: process.env.AUTH_SECRET,
     NODE_ENV: process.env.NODE_ENV,
+    VERCEL_URL: process.env.VERCEL_URL, // Add this
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   skipValidation:
@@ -27,3 +27,7 @@ export const env = createEnv({
     !!process.env.SKIP_ENV_VALIDATION ||
     process.env.npm_lifecycle_event === "lint",
 });
+
+// Add these exports to fix the import errors
+export const NODE_ENV = env.NODE_ENV;
+export const VERCEL_URL = env.VERCEL_URL;
