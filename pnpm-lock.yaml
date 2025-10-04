@@ -29,6 +29,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^5.2.2
         version: 5.2.2(react-hook-form@7.63.0(react@19.1.1))
+      '@prisma/nextjs-monorepo-workaround-plugin':
+        specifier: ^6.15.0
+        version: 6.16.3
       '@t3-oss/env-nextjs':
         specifier: ^0.13.8
         version: 0.13.8(typescript@5.9.2)(zod@4.1.11)
@@ -954,6 +957,9 @@ packages:
 
   '@prisma/get-platform@6.16.3':
     resolution: {integrity: sha512-X1LxiFXinJ4iQehrodGp0f66Dv6cDL0GbRlcCoLtSu6f4Wi+hgo7eND/afIs5029GQLgNWKZ46vn8hjyXTsHLA==}
+
+  '@prisma/nextjs-monorepo-workaround-plugin@6.16.3':
+    resolution: {integrity: sha512-sTp5m7evUaQpcA9CdAqUYGYbrfPY7LBazIFTdgtMxHquDCVbzkkCHNguKs9xWoaNCWQKGWY6a+AxeASmLyJjPQ==}
 
   '@radix-ui/react-compose-refs@1.1.2':
     resolution: {integrity: sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==}
@@ -4355,6 +4361,8 @@ snapshots:
   '@prisma/get-platform@6.16.3':
     dependencies:
       '@prisma/debug': 6.16.3
+
+  '@prisma/nextjs-monorepo-workaround-plugin@6.16.3': {}
 
   '@radix-ui/react-compose-refs@1.1.2(@types/react@19.1.9)(react@19.1.1)':
     dependencies:
